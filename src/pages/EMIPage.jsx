@@ -1,6 +1,7 @@
 import { Helmet } from 'react-helmet-async';
 import LoanCalculator from '../components/calculators/LoanCalculator';
 import SchemaMarkup from '../components/seo/SchemaMarkup';
+import RelatedCalculators from '../components/shared/RelatedCalculators';
 
 const EMIPage = () => {
     const schemaData = {
@@ -100,6 +101,9 @@ const EMIPage = () => {
                         </ul>
                     </div>
                 </section>
+
+                {/* Related Calculators */}
+                <RelatedCalculators currentPath="/emi" />
             </div>
         </>
     );

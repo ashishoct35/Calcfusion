@@ -3,6 +3,7 @@ import FIRECalculator from '../components/calculators/FIRECalculator';
 import Sidebar from '../components/Sidebar';
 import FAQ from '../components/FAQ';
 import SchemaMarkup from '../components/seo/SchemaMarkup';
+import RelatedCalculators from '../components/shared/RelatedCalculators';
 
 const FIREPage = () => {
     const schemaData = {
@@ -112,6 +113,9 @@ const FIREPage = () => {
                 <div className="mt-16">
                     <FAQ />
                 </div>
+
+                {/* Related Calculators */}
+                <RelatedCalculators currentPath="/fire" />
             </div>
         </>
     );

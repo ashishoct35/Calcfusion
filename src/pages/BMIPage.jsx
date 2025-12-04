@@ -1,6 +1,7 @@
 import { Helmet } from 'react-helmet-async';
 import BMICalculator from '../components/calculators/BMICalculator';
 import SchemaMarkup from '../components/seo/SchemaMarkup';
+import RelatedCalculators from '../components/shared/RelatedCalculators';
 
 const BMIPage = () => {
     const schemaData = {
@@ -95,6 +96,9 @@ const BMIPage = () => {
                         </ul>
                     </div>
                 </section>
+
+                {/* Related Calculators */}
+                <RelatedCalculators currentPath="/bmi" />
             </div>
         </>
     );
