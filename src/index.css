@@ -1,0 +1,64 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply transition-colors duration-300;
+  }
+}
+
+@layer components {
+  .glass-effect {
+    @apply backdrop-blur-lg bg-opacity-10 border border-opacity-20;
+  }
+  
+  .input-field {
+    @apply w-full px-4 py-2 rounded-lg border-2 focus:ring-2 focus:ring-opacity-50 transition-all duration-200 bg-white dark:bg-gray-800 border-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-400;
+  }
+  
+  .btn-primary {
+    @apply px-6 py-3 rounded-lg font-semibold transition-all duration-200 transform hover:scale-105 active:scale-95;
+  }
+  
+  .card {
+    @apply bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 transition-all duration-300;
+  }
+  
+  .tooltip {
+    @apply absolute hidden group-hover:block bg-gray-900 text-white text-sm rounded-lg px-3 py-2 z-50 whitespace-nowrap;
+  }
+}
+
+/* Neon theme overrides */
+.theme-neon {
+  @apply bg-black text-white;
+}
+
+.theme-neon .card {
+  @apply bg-gray-900 border-2 border-neon-purple;
+}
+
+.theme-neon .input-field {
+  @apply bg-gray-900 border-neon-blue text-white;
+}
+
+.theme-neon .btn-primary {
+  @apply bg-gradient-to-r from-neon-purple to-neon-pink text-white;
+}
+
+/* Print styles for PDF */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  
+  body {
+    @apply bg-white text-black;
+  }
+  
+  .card {
+    @apply shadow-none border border-gray-300;
+    page-break-inside: avoid;
+  }
+}
