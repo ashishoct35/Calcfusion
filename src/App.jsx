@@ -4,6 +4,7 @@ import { HelmetProvider } from 'react-helmet-async';
 import { ThemeProvider } from './context/ThemeContext';
 import Header from './components/Header';
 import Footer from './components/Footer';
+import PromoBanner from './components/PromoBanner';
 import Homepage from './pages/Homepage';
 import FIREPage from './pages/FIREPage';
 import EMIPage from './pages/EMIPage';
@@ -15,6 +16,7 @@ function App() {
             <ThemeProvider>
                 <BrowserRouter>
                     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-black text-gray-900 dark:text-gray-100 transition-colors duration-300">
+                        <PromoBanner />
                         <Header />
 
                         <main className="container mx-auto px-4 py-8 max-w-7xl">
