@@ -113,6 +113,7 @@ const FIRECompareCalculator = () => {
                         </div>
                         <div className="col-span-12 md:col-span-8">
                             <Input
+                                type="text"
                                 value={currency}
                                 onChange={setCurrency}
                                 placeholder="e.g., $, NPR, €, ₹"
