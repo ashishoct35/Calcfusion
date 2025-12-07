@@ -16,7 +16,7 @@ const Header = () => {
                         </div>
                         <div>
                             <h1 className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400 bg-clip-text text-transparent">
-                                CalcFusion
+                                Financify
                             </h1>
                             <p className="text-xs text-gray-600 dark:text-gray-400">
                                 Financial Calculator Suite
