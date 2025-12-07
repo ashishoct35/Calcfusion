@@ -12,7 +12,7 @@ const ComparePage = () => {
     return (
         <>
             <Helmet>
-                <title>Compare FIRE Scenarios - Side by Side Analysis | Financify</title>
+                <title>Compare FIRE Scenarios - Side by Side Analysis | CalcfusionX</title>
                 <meta name="description" content="Compare two investment scenarios side-by-side. See how Step-up SIP, different interest rates, or starting age affects your wealth." />
             </Helmet>
 

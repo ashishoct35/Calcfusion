@@ -165,56 +165,58 @@ const FIRECompareCalculator = () => {
                     </div>
 
                     <div className="overflow-hidden rounded-2xl border border-gray-200 dark:border-gray-700 shadow-sm">
-                        <table className="w-full">
-                            <thead>
-                                <tr className="bg-gray-50 dark:bg-gray-800 text-sm uppercase text-gray-500 dark:text-gray-400">
-                                    <th className="py-4 px-6 text-left">Metric</th>
-                                    <th className="py-4 px-6 text-right bg-blue-50/50 dark:bg-blue-900/10 text-blue-700 dark:text-blue-300">Scenario A</th>
-                                    <th className="py-4 px-6 text-right bg-purple-50/50 dark:bg-purple-900/10 text-purple-700 dark:text-purple-300">Scenario B</th>
-                                    <th className="py-4 px-6 text-right">Difference</th>
-                                </tr>
-                            </thead>
-                            <tbody className="divide-y divide-gray-200 dark:divide-gray-800 bg-white dark:bg-gray-900">
-                                <tr>
-                                    <td className="py-4 px-6 font-medium">Total Invested</td>
-                                    <td className="py-4 px-6 text-right font-mono text-blue-600">{formatMoney(resultA.totalInvested)}</td>
-                                    <td className="py-4 px-6 text-right font-mono text-purple-600">{formatMoney(resultB.totalInvested)}</td>
-                                    <td className="py-4 px-6 text-right font-mono text-gray-500">{formatMoney(Math.abs(resultA.totalInvested - resultB.totalInvested))}</td>
-                                </tr>
-                                <tr className="bg-gray-50/30 dark:bg-gray-800/30">
-                                    <td className="py-4 px-6 font-bold">Final Corpus</td>
-                                    <td className="py-4 px-6 text-right font-bold text-xl text-blue-700">{formatMoney(resultA.corpusAtRetirement)}</td>
-                                    <td className="py-4 px-6 text-right font-bold text-xl text-purple-700">{formatMoney(resultB.corpusAtRetirement)}</td>
-                                    <td className={`py-4 px-6 text-right font-bold ${Math.abs(resultA.corpusAtRetirement - resultB.corpusAtRetirement) > 0 ? 'text-green-600' : 'text-gray-500'}`}>
-                                        {formatMoney(Math.abs(resultA.corpusAtRetirement - resultB.corpusAtRetirement))}
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td className="py-4 px-6 font-medium">Inflation Adjusted</td>
-                                    <td className="py-4 px-6 text-right text-gray-600 dark:text-gray-400">{formatMoney(resultA.inflationAdjustedCorpus)}</td>
-                                    <td className="py-4 px-6 text-right text-gray-600 dark:text-gray-400">{formatMoney(resultB.inflationAdjustedCorpus)}</td>
-                                    <td className="py-4 px-6 text-right text-gray-500">-</td>
-                                </tr>
-                                <tr className="bg-gray-50/30 dark:bg-gray-800/30">
-                                    <td className="py-4 px-6 font-medium">Monthly Passive Income</td>
-                                    <td className="py-4 px-6 text-right text-blue-600">{formatMoney(resultA.safeWithdrawalMonthly)}</td>
-                                    <td className="py-4 px-6 text-right text-purple-600">{formatMoney(resultB.safeWithdrawalMonthly)}</td>
-                                    <td className="py-4 px-6 text-right text-green-600 font-medium">
-                                        {formatMoney(Math.abs(resultA.safeWithdrawalMonthly - resultB.safeWithdrawalMonthly))}
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td className="py-4 px-6 font-medium">Sustainability (Money Lasts)</td>
-                                    <td className={`py-4 px-6 text-right font-bold ${resultA.sustainable ? 'text-green-600' : 'text-red-600'}`}>
-                                        {resultA.sustainable ? 'Full Retirement ✅' : `${resultA.moneyLastsYears.toFixed(1)} years ⚠️`}
-                                    </td>
-                                    <td className={`py-4 px-6 text-right font-bold ${resultB.sustainable ? 'text-green-600' : 'text-red-600'}`}>
-                                        {resultB.sustainable ? 'Full Retirement ✅' : `${resultB.moneyLastsYears.toFixed(1)} years ⚠️`}
-                                    </td>
-                                    <td className="py-4 px-6 text-right text-gray-500">-</td>
-                                </tr>
-                            </tbody>
-                        </table>
+                        <div className="overflow-x-auto">
+                            <table className="w-full min-w-[600px]">
+                                <thead>
+                                    <tr className="bg-gray-50 dark:bg-gray-800 text-sm uppercase text-gray-500 dark:text-gray-400">
+                                        <th className="py-4 px-6 text-left">Metric</th>
+                                        <th className="py-4 px-6 text-right bg-blue-50/50 dark:bg-blue-900/10 text-blue-700 dark:text-blue-300">Scenario A</th>
+                                        <th className="py-4 px-6 text-right bg-purple-50/50 dark:bg-purple-900/10 text-purple-700 dark:text-purple-300">Scenario B</th>
+                                        <th className="py-4 px-6 text-right">Difference</th>
+                                    </tr>
+                                </thead>
+                                <tbody className="divide-y divide-gray-200 dark:divide-gray-800 bg-white dark:bg-gray-900">
+                                    <tr>
+                                        <td className="py-4 px-6 font-medium">Total Invested</td>
+                                        <td className="py-4 px-6 text-right font-mono text-blue-600">{formatMoney(resultA.totalInvested)}</td>
+                                        <td className="py-4 px-6 text-right font-mono text-purple-600">{formatMoney(resultB.totalInvested)}</td>
+                                        <td className="py-4 px-6 text-right font-mono text-gray-500">{formatMoney(Math.abs(resultA.totalInvested - resultB.totalInvested))}</td>
+                                    </tr>
+                                    <tr className="bg-gray-50/30 dark:bg-gray-800/30">
+                                        <td className="py-4 px-6 font-bold">Final Corpus</td>
+                                        <td className="py-4 px-6 text-right font-bold text-xl text-blue-700">{formatMoney(resultA.corpusAtRetirement)}</td>
+                                        <td className="py-4 px-6 text-right font-bold text-xl text-purple-700">{formatMoney(resultB.corpusAtRetirement)}</td>
+                                        <td className={`py-4 px-6 text-right font-bold ${Math.abs(resultA.corpusAtRetirement - resultB.corpusAtRetirement) > 0 ? 'text-green-600' : 'text-gray-500'}`}>
+                                            {formatMoney(Math.abs(resultA.corpusAtRetirement - resultB.corpusAtRetirement))}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td className="py-4 px-6 font-medium">Inflation Adjusted</td>
+                                        <td className="py-4 px-6 text-right text-gray-600 dark:text-gray-400">{formatMoney(resultA.inflationAdjustedCorpus)}</td>
+                                        <td className="py-4 px-6 text-right text-gray-600 dark:text-gray-400">{formatMoney(resultB.inflationAdjustedCorpus)}</td>
+                                        <td className="py-4 px-6 text-right text-gray-500">-</td>
+                                    </tr>
+                                    <tr className="bg-gray-50/30 dark:bg-gray-800/30">
+                                        <td className="py-4 px-6 font-medium">Monthly Passive Income</td>
+                                        <td className="py-4 px-6 text-right text-blue-600">{formatMoney(resultA.safeWithdrawalMonthly)}</td>
+                                        <td className="py-4 px-6 text-right text-purple-600">{formatMoney(resultB.safeWithdrawalMonthly)}</td>
+                                        <td className="py-4 px-6 text-right text-green-600 font-medium">
+                                            {formatMoney(Math.abs(resultA.safeWithdrawalMonthly - resultB.safeWithdrawalMonthly))}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td className="py-4 px-6 font-medium">Sustainability (Money Lasts)</td>
+                                        <td className={`py-4 px-6 text-right font-bold ${resultA.sustainable ? 'text-green-600' : 'text-red-600'}`}>
+                                            {resultA.sustainable ? 'Full Retirement ✅' : `${resultA.moneyLastsYears.toFixed(1)} years ⚠️`}
+                                        </td>
+                                        <td className={`py-4 px-6 text-right font-bold ${resultB.sustainable ? 'text-green-600' : 'text-red-600'}`}>
+                                            {resultB.sustainable ? 'Full Retirement ✅' : `${resultB.moneyLastsYears.toFixed(1)} years ⚠️`}
+                                        </td>
+                                        <td className="py-4 px-6 text-right text-gray-500">-</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
 
                     {/* Detailed Cards Section */}

@@ -29,7 +29,7 @@ const Footer = () => {
                 </div>
 
                 <p className="text-xs mt-4 text-gray-500 dark:text-gray-500">
-                    © 2025 FIRE Master Calculator. All rights reserved.
+                    © 2025 CalcfusionX. All rights reserved.
                 </p>
             </div>
         </footer>
