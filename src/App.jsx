@@ -7,14 +7,18 @@ import Footer from './components/Footer';
 import PromoBanner from './components/PromoBanner';
 import Homepage from './pages/Homepage';
 import FIREPage from './pages/FIREPage';
+import ComparePage from './pages/ComparePage';
 import EMIPage from './pages/EMIPage';
 import BMIPage from './pages/BMIPage';
+
+import ScrollToTop from './components/shared/ScrollToTop';
 
 function App() {
     return (
         <HelmetProvider>
             <ThemeProvider>
                 <BrowserRouter>
+                    <ScrollToTop />
                     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-black text-gray-900 dark:text-gray-100 transition-colors duration-300">
                         <PromoBanner />
                         <Header />
@@ -23,6 +27,7 @@ function App() {
                             <Routes>
                                 <Route path="/" element={<Homepage />} />
                                 <Route path="/fire" element={<FIREPage />} />
+                                <Route path="/compare" element={<ComparePage />} />
                                 <Route path="/emi" element={<EMIPage />} />
                                 <Route path="/bmi" element={<BMIPage />} />
                             </Routes>

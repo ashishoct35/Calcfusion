@@ -38,6 +38,14 @@ const Homepage = () => {
             description: 'Advanced body composition analysis. Calculate BMI, Body Fat % (Navy Method), BMR, and TDEE. Get personalized advice for fat loss, muscle gain, or maintenance.',
             link: '/bmi',
             features: ['BMI & Body Fat %', 'Calorie Needs (TDEE)', 'Personalized Advice', 'Simple & Advanced Modes']
+        },
+        {
+            id: 'compare',
+            title: 'Compare Scenarios',
+            icon: '🆚',
+            description: 'Pit two financial strategies against each other. Compare different investment amounts, returns, or retirement ages to see which plan builds more wealth.',
+            link: '/compare',
+            features: ['Side-by-Side Comparison', 'Scenario Analysis', 'Detailed Verdict', 'Wealth Projection']
         }
     ];
 

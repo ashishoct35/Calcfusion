@@ -20,6 +20,12 @@ const RelatedCalculators = ({ currentPath }) => {
             title: 'BMI Calculator',
             icon: '⚖️',
             description: 'Track body composition'
+        },
+        {
+            path: '/compare',
+            title: 'Compare Scenarios',
+            icon: '🆚',
+            description: 'Compare financial plans side-by-side'
         }
     ];
 

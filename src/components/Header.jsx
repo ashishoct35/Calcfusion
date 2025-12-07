@@ -37,7 +37,13 @@ const Header = () => {
                             to="/fire"
                             className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors font-medium"
                         >
-                            FIRE Calculator
+                            FIRE
+                        </Link>
+                        <Link
+                            to="/compare"
+                            className="text-gray-700 dark:text-gray-300 hover:text-green-600 dark:hover:text-green-400 transition-colors font-medium"
+                        >
+                            Compare
                         </Link>
                         <Link
                             to="/emi"
@@ -84,6 +90,12 @@ const Header = () => {
                         className="text-sm text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors font-medium"
                     >
                         FIRE Calculator
+                    </Link>
+                    <Link
+                        to="/compare"
+                        className="text-sm text-gray-700 dark:text-gray-300 hover:text-green-600 dark:hover:text-green-400 transition-colors font-medium"
+                    >
+                        Compare
                     </Link>
                     <Link
                         to="/emi"
