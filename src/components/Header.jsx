@@ -57,40 +57,43 @@ const Header = () => {
 
                     <div className="flex items-center gap-3">
                         {/* Auth Section */}
-                        {user ? (
-                            <div className="flex items-center gap-3 mr-2">
-                                <div className="hidden sm:flex flex-col items-end">
-                                    <span className="text-sm font-medium text-gray-700 dark:text-gray-200">
-                                        {user.displayName}
-                                    </span>
-                                </div>
-                                {user.photoURL ? (
-                                    <img
-                                        src={user.photoURL}
-                                        alt={user.displayName}
-                                        className="w-8 h-8 rounded-full border border-gray-200 dark:border-gray-700"
-                                    />
-                                ) : (
-                                    <div className="w-8 h-8 rounded-full bg-blue-100 dark:bg-blue-900 flex items-center justify-center">
-                                        <UserIcon className="w-5 h-5 text-blue-600 dark:text-blue-400" />
+                        {/* Auth Section - Only show on Financify subdomain */}
+                        {window.location.hostname.includes('financify') && (
+                            user ? (
+                                <div className="flex items-center gap-3 mr-2">
+                                    <div className="hidden sm:flex flex-col items-end">
+                                        <span className="text-sm font-medium text-gray-700 dark:text-gray-200">
+                                            {user.displayName}
+                                        </span>
                                     </div>
-                                )}
-                                <button
-                                    onClick={logout}
-                                    className="p-2 rounded-lg text-gray-500 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
-                                    title="Logout"
+                                    {user.photoURL ? (
+                                        <img
+                                            src={user.photoURL}
+                                            alt={user.displayName}
+                                            className="w-8 h-8 rounded-full border border-gray-200 dark:border-gray-700"
+                                        />
+                                    ) : (
+                                        <div className="w-8 h-8 rounded-full bg-blue-100 dark:bg-blue-900 flex items-center justify-center">
+                                            <UserIcon className="w-5 h-5 text-blue-600 dark:text-blue-400" />
+                                        </div>
+                                    )}
+                                    <button
+                                        onClick={logout}
+                                        className="p-2 rounded-lg text-gray-500 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+                                        title="Logout"
+                                    >
+                                        <LogOut className="w-5 h-5" />
+                                    </button>
+                                </div>
+                            ) : (
+                                <Link
+                                    to="/login"
+                                    className="flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium transition-colors mr-2"
                                 >
-                                    <LogOut className="w-5 h-5" />
-                                </button>
-                            </div>
-                        ) : (
-                            <Link
-                                to="/login"
-                                className="flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium transition-colors mr-2"
-                            >
-                                <LogIn className="w-4 h-4" />
-                                <span className="hidden sm:inline">Login</span>
-                            </Link>
+                                    <LogIn className="w-4 h-4" />
+                                    <span className="hidden sm:inline">Login</span>
+                                </Link>
+                            )
                         )}
 
 
