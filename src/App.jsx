@@ -14,22 +14,16 @@ import { useAuth } from './context/AuthContext';
 
 const RootRoute = () => {
     const { user, loading } = useAuth();
-    // Check if we are on the subdomain 'financify' OR 'localhost' (for testing if needed, though usually localhost maps to landing)
-    // Actually, user wants 'financify.calcfusionx.com' to be the login one.
-    // We will treat ANY subdomain containing 'financify' as the App.
+    // Safe check for subdomain
     const isAppDomain = window.location.hostname.includes('financify');
 
-    if (loading) return null; // Or a spinner
+    if (loading) return <div className="min-h-screen flex items-center justify-center">Loading...</div>;
 
     if (isAppDomain) {
-        // If on app domain:
-        // 1. If logged in -> Show Dashboard
-        // 2. If not logged in -> Show Login Page
         return user ? <DashboardPage /> : <LoginPage />;
     }
 
-    // If on main domain (calcfusionx.com):
-    // Show standard Landing Page
+    // Default: ALWAYS show Homepage for main domain
     return <Homepage />;
 };
 
